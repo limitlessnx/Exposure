@@ -1,3 +1,5 @@
+import SupportChat from '../components/SupportChat';
+
 const serviceCards = [
   ['PORTRAITS','Portraits / Editorial','https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=90'],
   ['STUDIO','Studio / Production','https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=90'],
@@ -75,5 +77,7 @@ export default function Home(){
     <section id="contact" className="cta"><div className="wrap ctaInner"><div><h2>Ready To Create Something Unforgettable?</h2><p>Let’s bring your vision to life.</p></div><a className="primaryBtn" href="mailto:hello@xposure.studio">BOOK YOUR SESSION <span>→</span></a></div></section>
 
     <footer className="footer"><div className="wrap footerTop"><div className="footerBrand"><a className="brand big" href="#top" aria-label="Xposure home">Xposure</a><p>Creating visuals.<br/>Telling stories.</p></div><div className="footerLinks"><a href="#top">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#work">Portfolio</a><a href="#journal">Journal</a><a href="#contact">Contact</a></div><div className="footerSocials"><span>◎</span><span>▶</span><span>𝕏</span><span>♪</span></div><a className="ghostBtn" href="#contact">BOOK NOW <span>→</span></a></div><div className="wrap footerBottom"><span>© 2026 Xposure Studio. All rights reserved.</span><div><span>Lagos, Nigeria</span><span>hello@xposure.studio</span></div></div></footer>
+
+    <SupportChat/>
   </main>
 }
