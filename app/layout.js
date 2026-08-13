@@ -1,5 +1,6 @@
 import './globals.css';
 import './brand.css';
+import './chat.css';
 
 export const metadata = {
   title: 'Xposure Studio | Photography & Film',
