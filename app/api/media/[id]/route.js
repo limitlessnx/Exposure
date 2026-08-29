@@ -20,6 +20,7 @@ import wedding11 from '../../../media/wedding_11';
 
 export const runtime = 'nodejs';
 
+// Xposure media is kept server-side so the site can serve the exact portfolio artwork without stock-image substitutions.
 const images = {
   '0217': {
     data: img0217a + img0217b + img0217c,
