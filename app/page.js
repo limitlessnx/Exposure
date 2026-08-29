@@ -1,83 +1,97 @@
 import SupportChat from '../components/SupportChat';
 
-const serviceCards = [
-  ['PORTRAITS','Portraits / Editorial','https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=90'],
-  ['STUDIO','Studio / Production','https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=90'],
-  ['DRONE','Aerial / Motion','https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=90'],
-  ['EVENTS','Live / Celebration','https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=90'],
-  ['COMMERCIAL','Campaigns / Brands','https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=90'],
+const shots = [
+  {
+    title: 'Editorial Portrait',
+    img: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=90'
+  },
+  {
+    title: 'Monochrome Story',
+    img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=90'
+  }
 ];
 
-const journal = [
-  ['5 Lighting Tips Every Photographer Should Know','Tips','https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=88'],
-  ['Behind The Scenes: Fashion Editorial Photoshoot','Behind The Scenes','https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=88'],
-  ['The Best Camera Settings For Cinematic Video','Gear','https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=88'],
-  ['Building A Strong Brand Through Visual Storytelling','Business','https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=88'],
-];
-
-const disciplines = [
-  ['01','Photography','Portraits, fashion, lifestyle, products and brand campaigns captured with precision.'],
-  ['02','Film Production','Commercials, documentaries, music videos and cinematic storytelling that connects.'],
-  ['03','Creative Direction','Concept development, styling, visual strategy and art direction from idea to final frame.'],
-  ['04','Post Production','Professional editing, retouching, colour grading and finishing that elevates every detail.'],
+const gallery = [
+  'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=90',
+  'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=90',
+  'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=90'
 ];
 
 export default function Home(){
-  return <main>
-    <section id="top" className="heroShell">
-      <header className="nav wrap">
-        <a className="brand" href="#top" aria-label="Xposure home">Xposure</a>
-        <nav aria-label="Primary navigation">
-          <a className="active" href="#top">HOME</a><a href="#about">ABOUT</a><a href="#services">SERVICES</a><a href="#work">PORTFOLIO</a><a href="#journal">JOURNAL</a><a href="#contact">CONTACT</a>
-        </nav>
-        <div className="navRight"><a className="ghostBtn" href="#contact">BOOK A SESSION <span>→</span></a><button className="menuBtn" aria-label="Open menu"><i></i><i></i><i></i></button></div>
-      </header>
+  return (
+    <main className="studioPage">
+      <section id="top" className="studioHero">
+        <header className="studioNav studioWrap">
+          <a className="brand" href="#top" aria-label="Xposure home">Xposure</a>
+          <nav aria-label="Primary navigation">
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact Us</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#videos">Videos</a>
+            <a className="bookLink" href="#contact">Book Now</a>
+          </nav>
+          <button className="studioMenu" aria-label="Open menu"><span></span><span></span></button>
+        </header>
 
-      <div className="socialRail" aria-label="Social media links"><span>◎</span><span>▶</span><span>𝕏</span><span>♪</span></div>
-      <div className="heroBackdrop"></div>
-      <div className="wrap heroGrid">
-        <div className="heroCopy">
-          <p className="eyebrow"><b></b> CAPTURE <span>/</span> CREATE <span>/</span> INSPIRE</p>
-          <h1>YOUR STORY<br/>DESERVES<br/><em>XPOSURE</em><sup>™</sup></h1>
-          <p className="heroText">We turn moments into timeless visuals. From portraits to productions, events to campaigns, Xposure delivers cinematic photography and creative content that speaks.</p>
-          <div className="heroActions"><a href="#contact" className="primaryBtn">BOOK A SESSION <span>→</span></a><a href="#showreel" className="playBtn"><span className="playCircle">▶</span><b>WATCH SHOWREEL</b></a></div>
-          <div className="heroStats"><div><strong>500<em>+</em></strong><span>PROJECTS</span></div><div><strong>300<em>+</em></strong><span>CLIENTS</span></div><div><strong>5<em>+</em></strong><span>YEARS</span></div><div><strong>12</strong><span>AWARDS</span></div></div>
+        <div className="studioWrap heroLayout">
+          <div className="heroIntro" id="about">
+            <p className="miniLabel">XPOSURE STUDIO</p>
+            <h1>Photography<br/>Studio</h1>
+            <h3>Who We Are?</h3>
+            <p className="heroBody">We create portraits, campaigns and visual stories with a deliberate eye for light, emotion and detail. Xposure is built for people and brands that want imagery with character.</p>
+            <a className="goldButton" href="#portfolio">READ MORE ABOUT US</a>
+            <div className="heroSocials" aria-label="Social links"><span>Be</span><span>f</span><span>in</span><span>𝕏</span></div>
+          </div>
+
+          <div className="heroPortrait" aria-label="Featured Xposure portrait">
+            <div className="portraitHalo"></div>
+            <img src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&w=1500&q=92" alt="Editorial portrait photographed by Xposure"/>
+            <div className="slideCount"><strong>01</strong><i></i><span>03</span></div>
+            <button className="pauseButton" aria-label="Pause slideshow">Ⅱ</button>
+          </div>
         </div>
+      </section>
 
-        <div className="heroVisual" aria-hidden="true">
-          <div className="cameraGlow"></div>
-          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1800&q=95" alt="Professional cinema camera"/>
-          <div className="videoCard" id="showreel"><div className="videoCardShade"></div><span className="videoPlay">▶</span><div><b>MOMENTS IN MOTION</b><small>Xposure Studio</small></div></div>
-          <div className="pager"><i></i><i></i><i></i></div>
+      <section id="portfolio" className="bestShots">
+        <div className="contour contourOne"></div>
+        <div className="studioWrap bestLayout">
+          <div className="bestCopy">
+            <p className="miniLabel">SELECTED WORK</p>
+            <h2>Best Shots</h2>
+            <p>We do not just take pictures. We preserve mood, movement and personality, creating photographs that feel as alive as the moments themselves.</p>
+            <a className="goldButton" href="#gallery">BROWSE ALL IMAGES</a>
+          </div>
+
+          <div className="shotGrid">
+            {shots.map((shot, i)=><figure className={`shotCard shot${i+1}`} key={shot.title}><img src={shot.img} alt={shot.title}/><figcaption>{shot.title}</figcaption></figure>)}
+            <div className="shotControls"><button aria-label="Previous image">Prev</button><span></span><button aria-label="Next image">Next</button></div>
+          </div>
         </div>
-      </div>
-      <div className="scrollCue"><span></span><small>SCROLL TO EXPLORE</small><b></b></div>
-    </section>
+      </section>
 
-    <section id="services" className="serviceStrip">
-      {serviceCards.map(([title,tag,img])=><a href="#work" className="serviceTile" key={title} style={{backgroundImage:`linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.72)),url(${img})`}}><div><small>{tag}</small><strong>{title} <span>→</span></strong></div></a>)}
-    </section>
+      <section id="gallery" className="gallerySection">
+        <div className="studioWrap">
+          <div className="galleryHeading"><p className="miniLabel">XPOSURE ARCHIVE</p><h2>Stories In Frame</h2></div>
+          <div className="galleryGrid">{gallery.map((src,i)=><figure key={src}><img src={src} alt={`Xposure portfolio image ${i+1}`}/></figure>)}</div>
+        </div>
+      </section>
 
-    <section id="about" className="about wrap sectionSplit">
-      <div className="aboutPhoto"><img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1400&q=90" alt="Xposure photographer at work"/><span className="roundPlay">▶</span></div>
-      <div className="aboutText"><p className="kicker">ABOUT XPOSURE</p><h2>We Don’t Just Capture Moments. We Shape How They’re Remembered.</h2><p>We blend creativity, technical mastery and storytelling to create visuals that connect, inspire and leave a lasting impression. From portraits to full-scale productions, we bring your vision to life.</p><div className="stats"><div><b>8+</b><span>Years Creating</span></div><div><b>500+</b><span>Projects Delivered</span></div><div><b>300+</b><span>Clients</span></div><div><b>20K+</b><span>Images Produced</span></div></div></div>
-    </section>
+      <section id="videos" className="videoBand">
+        <div className="studioWrap videoBandInner"><div><p className="miniLabel">MOTION</p><h2>Stillness is only half the story.</h2></div><a className="goldButton" href="#contact">VIEW VIDEO WORK</a></div>
+      </section>
 
-    <section id="work" className="work wrap">
-      <div className="workIntro"><p className="kicker">FEATURED WORK</p><h2>Selected<br/>Xposures</h2><p>A collection of our favourite projects across photography and film.</p><a href="#contact">VIEW ALL PROJECTS →</a></div>
-      <div className="mosaic"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=88" alt="Fashion portrait"/><img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=88" alt="Commercial automotive work"/><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=88" alt="Portrait campaign"/><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=88" alt="Wedding photography"/><img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=88" alt="Product photography"/><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=88" alt="Film production"/></div>
-    </section>
+      <section id="contact" className="studioContact">
+        <div className="studioWrap contactGrid">
+          <div><p className="miniLabel">BOOK XPOSURE</p><h2>Have a frame in mind?</h2><p>Portraits, studio sessions, events, campaigns and film production.</p></div>
+          <a className="goldButton" href="mailto:hello@xposure.studio">START A PROJECT</a>
+        </div>
+      </section>
 
-    <section id="studio" className="disciplines wrap">{disciplines.map(([n,t,d])=><article key={n}><span>{n}</span><div><h3>{t}</h3><p>{d}</p></div></article>)}</section>
+      <footer className="studioFooter">
+        <div className="studioWrap footerInner"><a className="brand footerBrand" href="#top">Xposure</a><span>© 2026 Xposure Studio</span><div><a href="#about">About</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a></div></div>
+      </footer>
 
-    <section className="testimonial wrap sectionSplit"><div><p className="kicker">CLIENT STORIES</p><h2>Seen Through<br/>Their Eyes.</h2><blockquote>“Xposure completely understood the visual direction we wanted and delivered something beyond what we imagined.”</blockquote><div className="stars">★★★★★</div><b>Sarah Johnson</b><small>Brand Director, Lumière</small></div><div className="testPhoto"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1000&q=88" alt="Client portrait"/></div></section>
-
-    <section id="journal" className="journal wrap"><div className="journalHead"><div><p className="kicker">THE XPOSURE JOURNAL</p><h2>Insights. Stories. Inspiration.</h2></div><a href="#">VIEW ALL ARTICLES →</a></div><div className="journalGrid">{journal.map(([title,cat,img],i)=><article key={title}><img src={img} alt=""/><div><small>APR {15-i*3}, 2026 &nbsp;•&nbsp; {cat}</small><h3>{title}</h3></div></article>)}</div></section>
-
-    <section id="contact" className="cta"><div className="wrap ctaInner"><div><h2>Ready To Create Something Unforgettable?</h2><p>Let’s bring your vision to life.</p></div><a className="primaryBtn" href="mailto:hello@xposure.studio">BOOK YOUR SESSION <span>→</span></a></div></section>
-
-    <footer className="footer"><div className="wrap footerTop"><div className="footerBrand"><a className="brand big" href="#top" aria-label="Xposure home">Xposure</a><p>Creating visuals.<br/>Telling stories.</p></div><div className="footerLinks"><a href="#top">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#work">Portfolio</a><a href="#journal">Journal</a><a href="#contact">Contact</a></div><div className="footerSocials"><span>◎</span><span>▶</span><span>𝕏</span><span>♪</span></div><a className="ghostBtn" href="#contact">BOOK NOW <span>→</span></a></div><div className="wrap footerBottom"><span>© 2026 Xposure Studio. All rights reserved.</span><div><span>Lagos, Nigeria</span><span>hello@xposure.studio</span></div></div></footer>
-
-    <SupportChat/>
-  </main>
+      <SupportChat/>
+    </main>
+  );
 }
