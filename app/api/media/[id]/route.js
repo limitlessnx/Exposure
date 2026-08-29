@@ -5,22 +5,17 @@ import img0223a from '../../../media/0223_0';
 import img0223b from '../../../media/0223_1';
 import img0223c from '../../../media/0223_2';
 import img0223d from '../../../media/0223_3';
-import wedding0 from '../../../media/wedding_0';
-import wedding1 from '../../../media/wedding_1';
-import wedding2 from '../../../media/wedding_2';
-import wedding3 from '../../../media/wedding_3';
-import wedding4 from '../../../media/wedding_4';
-import wedding5 from '../../../media/wedding_5';
-import wedding6 from '../../../media/wedding_6';
-import wedding7 from '../../../media/wedding_7';
-import wedding8 from '../../../media/wedding_8';
-import wedding9 from '../../../media/wedding_9';
-import wedding10 from '../../../media/wedding_10';
-import wedding11 from '../../../media/wedding_11';
+import wedding00 from '../../../media/wedding_00';
+import wedding01 from '../../../media/wedding_01';
+import wedding02 from '../../../media/wedding_02';
+import wedding03 from '../../../media/wedding_03';
+import wedding04 from '../../../media/wedding_04';
+import wedding05 from '../../../media/wedding_05';
+import wedding06 from '../../../media/wedding_06';
+import wedding07 from '../../../media/wedding_07';
 
 export const runtime = 'nodejs';
 
-// Xposure media is kept server-side so the site can serve the exact portfolio artwork without stock-image substitutions.
 const images = {
   '0217': {
     data: img0217a + img0217b + img0217c,
@@ -31,8 +26,8 @@ const images = {
     type: 'image/webp',
   },
   'wedding': {
-    data: wedding0 + wedding1 + wedding2 + wedding3 + wedding4 + wedding5 + wedding6 + wedding7 + wedding8 + wedding9 + wedding10 + wedding11,
-    type: 'image/jpeg',
+    data: wedding00 + wedding01 + wedding02 + wedding03 + wedding04 + wedding05 + wedding06 + wedding07,
+    type: 'image/webp',
   },
 };
 
