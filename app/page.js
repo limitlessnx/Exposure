@@ -61,7 +61,7 @@ export default function Home(){
       <section className="weddingStory" aria-labelledby="wedding-story-title">
         <div className="studioWrap weddingStoryGrid">
           <figure className="weddingStoryImage">
-            <img src="/images/xposure-wedding.webp" alt="Wedding portrait by Xposure Studio" />
+            <img src="/images/xposure-wedding-original-2026.jpeg" alt="Wedding portrait by Xposure Studio" />
           </figure>
           <div className="weddingStoryCopy">
             <p className="miniLabel">WEDDING / XPOSURE STORY</p>
