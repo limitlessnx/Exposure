@@ -1,5 +1,6 @@
 import './globals.css';
 import './brand.css';
+import './signature.css';
 import './chat.css';
 
 export const metadata = {
