@@ -15,7 +15,6 @@ export default function Home(){
           <nav aria-label="Primary navigation">
             <a href="#about">About Us</a>
             <a href="#portfolio">Portfolio</a>
-            <a href="#weddings">Weddings</a>
             <a href="#studio">Studio</a>
             <a href="#contact">Contact Us</a>
             <a className="bookLink" href="#contact">Book Now</a>
@@ -59,18 +58,17 @@ export default function Home(){
         </div>
       </section>
 
-      <section id="weddings" className="weddingStory">
-        <div className="studioWrap weddingCard">
-          <figure className="weddingImage">
-            <img src="/api/media/0219" alt="Bride and groom photographed by Xposure Studio"/>
-            <figcaption><span>WEDDING / XPOSURE</span><b>A beginning, held still.</b></figcaption>
+      <section className="weddingStory" aria-labelledby="wedding-story-title">
+        <div className="studioWrap weddingStoryGrid">
+          <figure className="weddingStoryImage">
+            <img src="/images/xposure-wedding-story.jpeg" alt="Wedding portrait by Xposure Studio" />
           </figure>
-          <div className="weddingDetail">
-            <p className="miniLabel">WEDDING STORY</p>
-            <h2>Two people.<br/>One frame.<br/>Everything ahead.</h2>
-            <p className="weddingLead">A wedding portrait is more than proof that the day happened. It is the photograph that returns years later and still carries the quiet confidence, anticipation and weight of the moment.</p>
-            <p>For this frame, the couple are allowed to stand in their own presence. Clean whites, strong symmetry and the dark architectural centre create a portrait that feels formal without becoming distant. The result is less about posing for a camera and more about preserving the beginning of a shared story.</p>
-            <div className="weddingMeta"><div><span>STORY</span><b>Wedding Portrait</b></div><div><span>STYLE</span><b>Editorial / Timeless</b></div><div><span>BY</span><b>Xposure Studio</b></div></div>
+          <div className="weddingStoryCopy">
+            <p className="miniLabel">WEDDING / XPOSURE STORY</p>
+            <h2 id="wedding-story-title">A beginning,<br/>held still.</h2>
+            <p className="weddingLead">Two people. One frame. Everything ahead.</p>
+            <p>The symmetry, stillness and contrast in this portrait give the moment its weight. The groom stands composed, the bride commands the frame, and the white architecture keeps everything timeless. It is not just a wedding photograph. It is the first page of a story they will keep returning to.</p>
+            <div className="weddingMeta"><div><span>Type</span><b>Wedding Portrait</b></div><div><span>Style</span><b>Editorial & Timeless</b></div><div><span>Studio</span><b>Xposure</b></div></div>
             <a className="goldButton" href="#contact">BOOK A WEDDING SHOOT</a>
           </div>
         </div>
@@ -102,28 +100,8 @@ export default function Home(){
       </section>
 
       <footer className="studioFooter">
-        <div className="studioWrap footerInner"><a className="brand footerBrand" href="#top">Xposure</a><span>© 2026 Xposure Studio</span><div><a href="#portfolio">Portfolio</a><a href="#weddings">Weddings</a><a href="#studio">Studio</a><a href="#contact">Contact</a></div></div>
+        <div className="studioWrap footerInner"><a className="brand footerBrand" href="#top">Xposure</a><span>© 2026 Xposure Studio</span><div><a href="#portfolio">Portfolio</a><a href="#studio">Studio</a><a href="#contact">Contact</a></div></div>
       </footer>
-
-      <style>{`
-        .weddingStory{padding:120px 0;background:#090909;border-top:1px solid #181818;border-bottom:1px solid #181818}
-        .weddingCard{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:86px;align-items:center}
-        .weddingImage{margin:0;min-height:740px;position:relative;background:#0d0d0d;overflow:hidden;border:1px solid rgba(255,255,255,.06)}
-        .weddingImage img{width:100%;height:100%;position:absolute;inset:0;object-fit:contain;object-position:center;background:#0d0d0d}
-        .weddingImage:after{content:'';position:absolute;inset:auto 0 0;height:26%;background:linear-gradient(transparent,rgba(0,0,0,.72));pointer-events:none}
-        .weddingImage figcaption{position:absolute;z-index:2;left:24px;right:24px;bottom:22px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
-        .weddingImage figcaption span{font-size:8px;letter-spacing:.18em;color:#c9c5bd}
-        .weddingImage figcaption b{font-size:12px;font-weight:600;color:#fff}
-        .weddingDetail h2{font-size:58px;line-height:.94;letter-spacing:-.055em;margin:0 0 24px}
-        .weddingDetail>p:not(.miniLabel){font-size:12px;line-height:1.8;color:#8f8c86;max-width:520px}
-        .weddingDetail .weddingLead{font-size:14px!important;color:#c4c0b8!important;margin-bottom:18px}
-        .weddingMeta{margin:34px 0;border-top:1px solid #252525}
-        .weddingMeta>div{display:grid;grid-template-columns:90px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid #222}
-        .weddingMeta span{font-size:8px;letter-spacing:.16em;color:#777}
-        .weddingMeta b{font-size:10px;font-weight:600;color:#d4d0c8}
-        @media(max-width:900px){.weddingCard{grid-template-columns:1fr;gap:48px}.weddingImage{min-height:680px}.weddingDetail h2{font-size:48px}}
-        @media(max-width:600px){.weddingStory{padding:76px 0}.weddingImage{min-height:0;aspect-ratio:1284/1643}.weddingImage img{object-fit:contain}.weddingDetail h2{font-size:39px}.weddingImage figcaption{left:14px;right:14px;bottom:14px}.weddingImage figcaption b{font-size:10px}.weddingMeta>div{grid-template-columns:74px 1fr}}
-      `}</style>
 
       <SupportChat/>
     </main>
