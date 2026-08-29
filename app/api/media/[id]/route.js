@@ -5,12 +5,34 @@ import img0223a from '../../../media/0223_0';
 import img0223b from '../../../media/0223_1';
 import img0223c from '../../../media/0223_2';
 import img0223d from '../../../media/0223_3';
+import wedding0 from '../../../media/wedding_0';
+import wedding1 from '../../../media/wedding_1';
+import wedding2 from '../../../media/wedding_2';
+import wedding3 from '../../../media/wedding_3';
+import wedding4 from '../../../media/wedding_4';
+import wedding5 from '../../../media/wedding_5';
+import wedding6 from '../../../media/wedding_6';
+import wedding7 from '../../../media/wedding_7';
+import wedding8 from '../../../media/wedding_8';
+import wedding9 from '../../../media/wedding_9';
+import wedding10 from '../../../media/wedding_10';
+import wedding11 from '../../../media/wedding_11';
 
 export const runtime = 'nodejs';
 
 const images = {
-  '0217': img0217a + img0217b + img0217c,
-  '0223': img0223a + img0223b + img0223c + img0223d,
+  '0217': {
+    data: img0217a + img0217b + img0217c,
+    type: 'image/webp',
+  },
+  '0223': {
+    data: img0223a + img0223b + img0223c + img0223d,
+    type: 'image/webp',
+  },
+  'wedding': {
+    data: wedding0 + wedding1 + wedding2 + wedding3 + wedding4 + wedding5 + wedding6 + wedding7 + wedding8 + wedding9 + wedding10 + wedding11,
+    type: 'image/jpeg',
+  },
 };
 
 const fallbacks = {
@@ -24,13 +46,13 @@ const fallbacks = {
 
 export async function GET(_request, { params }) {
   const { id } = await params;
-  const encoded = images[id];
+  const image = images[id];
 
-  if (encoded) {
-    const body = Buffer.from(encoded, 'base64');
+  if (image) {
+    const body = Buffer.from(image.data, 'base64');
     return new Response(body, {
       headers: {
-        'Content-Type': 'image/webp',
+        'Content-Type': image.type,
         'Cache-Control': 'public, max-age=31536000, immutable',
         'Content-Length': String(body.length),
       },
