@@ -34,7 +34,7 @@ export default function Home(){
 
           <div className="heroPortrait">
             <div className="portraitHalo"></div>
-            <img src="/api/media/0217" alt="Xposure studio editorial portrait" fetchPriority="high"/>
+            <img src="/images/xposure-editorial.webp" alt="Xposure studio editorial portrait" fetchPriority="high"/>
             <div className="heroFrameLabel"><span>PORTRAIT / EDITORIAL</span><strong>01</strong><i></i><small>08</small></div>
             <div className="imageCredit">SHOT BY XPOSURE</div>
           </div>
@@ -51,8 +51,8 @@ export default function Home(){
           </div>
 
           <div className="shotGrid signatureShotGrid">
-            <figure className="shotCard shot1"><img src="/api/media/0223" alt="Xposure portrait in white"/><figcaption><span>Portrait</span><b>Quiet confidence</b></figcaption></figure>
-            <figure className="shotCard shot2"><img src="/api/media/0217" alt="Xposure editorial portrait"/><figcaption><span>Editorial</span><b>Signature Xposure</b></figcaption></figure>
+            <figure className="shotCard shot1"><img src="/images/xposure-portrait.webp" alt="Xposure portrait in white"/><figcaption><span>Portrait</span><b>Quiet confidence</b></figcaption></figure>
+            <figure className="shotCard shot2"><img src="/images/xposure-editorial.webp" alt="Xposure editorial portrait"/><figcaption><span>Editorial</span><b>Signature Xposure</b></figcaption></figure>
             <div className="shotControls"><span>01</span><i></i><span>02</span></div>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function Home(){
       <section className="weddingStory" aria-labelledby="wedding-story-title">
         <div className="studioWrap weddingStoryGrid">
           <figure className="weddingStoryImage">
-            <img src="/api/media/wedding?v=3" alt="Wedding portrait by Xposure Studio" />
+            <img src="/images/xposure-wedding.webp" alt="Wedding portrait by Xposure Studio" />
           </figure>
           <div className="weddingStoryCopy">
             <p className="miniLabel">WEDDING / XPOSURE STORY</p>
@@ -78,7 +78,7 @@ export default function Home(){
         <div className="studioWrap">
           <div className="galleryHeading"><div><p className="miniLabel">THE XPOSURE ARCHIVE</p><h2>Stories in frame.</h2></div><p>People. Milestones. Personality. Every frame treated like it has to sell the studio without saying a word.</p></div>
           <div className="galleryGrid galleryGridThree">
-            {gallery.map((item, i)=><figure className={`galleryItem galleryItem${i+1} ${item.crop}`} key={`${item.id}-${i}`}><img src={`/api/media/${item.id}`} alt={`${item.title} by Xposure Studio`}/><figcaption><span>{item.category}</span><b>{item.title}</b></figcaption></figure>)}
+            {gallery.map((item, i)=><figure className={`galleryItem galleryItem${i+1} ${item.crop}`} key={`${item.id}-${i}`}><img src={item.id === '0217' ? '/images/xposure-editorial.webp' : '/images/xposure-portrait.webp'} alt={`${item.title} by Xposure Studio`}/><figcaption><span>{item.category}</span><b>{item.title}</b></figcaption></figure>)}
           </div>
         </div>
       </section>
