@@ -1,11 +1,9 @@
 import SupportChat from '../components/SupportChat';
 
 const gallery = [
-  { id: '0224', title: 'Studio Portrait', category: 'Portraits' },
-  { id: '0219', title: 'Wedding Story', category: 'Weddings' },
-  { id: '0221', title: 'Editorial Light', category: 'Editorial' },
-  { id: '0218', title: 'Little Moments', category: 'Kids' },
-  { id: '0215', title: 'The Xposure Space', category: 'Studio' },
+  { id: '0223', title: 'Quiet Confidence', category: 'Portraits', crop: 'galleryCropA' },
+  { id: '0217', title: 'Signature Editorial', category: 'Editorial', crop: 'galleryCropB' },
+  { id: '0223', title: 'Studio Detail', category: 'Studio Portraits', crop: 'galleryCropC' },
 ];
 
 export default function Home(){
@@ -48,13 +46,13 @@ export default function Home(){
           <div className="bestCopy">
             <p className="miniLabel">SELECTED WORK</p>
             <h2>Best<br/>Shots</h2>
-            <p>The work should do the convincing. Real Xposure portraits, preserved in full colour so skin, styling, light and atmosphere stay exactly where the photographer intended them.</p>
+            <p>The work should do the convincing. Real Xposure photography stays in full colour so skin, styling, light and atmosphere remain exactly where the photographer intended them.</p>
             <a className="goldButton" href="#gallery">BROWSE THE PORTFOLIO</a>
           </div>
 
-          <div className="shotGrid">
+          <div className="shotGrid signatureShotGrid">
             <figure className="shotCard shot1"><img src="/api/media/0223" alt="Xposure portrait in white"/><figcaption><span>Portrait</span><b>Quiet confidence</b></figcaption></figure>
-            <figure className="shotCard shot2"><img src="/api/media/0220" alt="Xposure portrait in pink suit"/><figcaption><span>Editorial</span><b>Studio character</b></figcaption></figure>
+            <figure className="shotCard shot2"><img src="/api/media/0217" alt="Xposure editorial portrait"/><figcaption><span>Editorial</span><b>Signature Xposure</b></figcaption></figure>
             <div className="shotControls"><span>01</span><i></i><span>02</span></div>
           </div>
         </div>
@@ -63,16 +61,16 @@ export default function Home(){
       <section id="gallery" className="gallerySection">
         <div className="studioWrap">
           <div className="galleryHeading"><div><p className="miniLabel">THE XPOSURE ARCHIVE</p><h2>Stories in frame.</h2></div><p>People. Milestones. Personality. Every frame treated like it has to sell the studio without saying a word.</p></div>
-          <div className="galleryGrid">
-            {gallery.map((item, i)=><figure className={`galleryItem galleryItem${i+1}`} key={item.id}><img src={`/api/media/${item.id}`} alt={`${item.title} by Xposure Studio`}/><figcaption><span>{item.category}</span><b>{item.title}</b></figcaption></figure>)}
+          <div className="galleryGrid galleryGridThree">
+            {gallery.map((item, i)=><figure className={`galleryItem galleryItem${i+1} ${item.crop}`} key={`${item.id}-${i}`}><img src={`/api/media/${item.id}`} alt={`${item.title} by Xposure Studio`}/><figcaption><span>{item.category}</span><b>{item.title}</b></figcaption></figure>)}
           </div>
         </div>
       </section>
 
-      <section id="studio" className="studioFeature">
+      <section id="studio" className="studioFeature studioFeatureText">
         <div className="studioWrap studioFeatureGrid">
-          <figure className="studioImage"><img src="/api/media/0215" alt="Inside Xposure Studio"/></figure>
-          <div className="studioFeatureCopy"><p className="miniLabel">THE SPACE</p><h2>Walk in with an idea.<br/>Leave with an image.</h2><p>A warm, controlled studio built for portraits, children, fashion, personal branding and creative productions. The environment is part of the experience, not an afterthought.</p><div className="studioFacts"><div><b>Studio</b><span>Controlled lighting & sets</span></div><div><b>Direction</b><span>Guidance from pose to final frame</span></div><div><b>Finish</b><span>Professional retouching & delivery</span></div></div><a className="goldButton" href="#contact">BOOK THE STUDIO</a></div>
+          <div className="studioManifesto" aria-hidden="true"><span>X</span><div><small>THE XPOSURE SIGNATURE</small><strong>LIGHT<br/>FORM<br/>FEELING</strong></div></div>
+          <div className="studioFeatureCopy"><p className="miniLabel">THE EXPERIENCE</p><h2>Walk in with an idea.<br/>Leave with an image.</h2><p>Xposure is built around controlled light, thoughtful direction and a polished finish. From first pose to final delivery, the experience is designed to make every client look intentional, not accidental.</p><div className="studioFacts"><div><b>Studio</b><span>Controlled lighting & creative sets</span></div><div><b>Direction</b><span>Guidance from pose to final frame</span></div><div><b>Finish</b><span>Professional retouching & delivery</span></div></div><a className="goldButton" href="#contact">BOOK THE STUDIO</a></div>
         </div>
       </section>
 
