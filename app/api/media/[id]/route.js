@@ -13,20 +13,34 @@ const images = {
   '0223': img0223a + img0223b + img0223c + img0223d,
 };
 
+const fallbacks = {
+  '0215': 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1800&q=92',
+  '0218': 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1800&q=92',
+  '0219': 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=92',
+  '0220': 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1800&q=92',
+  '0221': 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1800&q=92',
+  '0224': 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=92',
+};
+
 export async function GET(_request, { params }) {
   const { id } = await params;
   const encoded = images[id];
 
-  if (!encoded) {
-    return new Response('Not found', { status: 404 });
+  if (encoded) {
+    const body = Buffer.from(encoded, 'base64');
+    return new Response(body, {
+      headers: {
+        'Content-Type': 'image/webp',
+        'Cache-Control': 'public, max-age=31536000, immutable',
+        'Content-Length': String(body.length),
+      },
+    });
   }
 
-  const body = Buffer.from(encoded, 'base64');
-  return new Response(body, {
-    headers: {
-      'Content-Type': 'image/webp',
-      'Cache-Control': 'public, max-age=31536000, immutable',
-      'Content-Length': String(body.length),
-    },
-  });
+  const fallback = fallbacks[id];
+  if (fallback) {
+    return Response.redirect(fallback, 307);
+  }
+
+  return new Response('Not found', { status: 404 });
 }
