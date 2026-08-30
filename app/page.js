@@ -1,4 +1,5 @@
 import SupportChat from '../components/SupportChat';
+import HeroCarousel from '../components/HeroCarousel';
 
 const gallery = [
   { id: '0223', title: 'Quiet Confidence', category: 'Portraits', crop: 'galleryCropA' },
@@ -32,12 +33,7 @@ export default function Home(){
             <div className="heroSocials" aria-label="Social links"><a href="https://www.instagram.com/xposure.ng" target="_blank" rel="noreferrer">Instagram</a><span>•</span><span>Lagos, Nigeria</span></div>
           </div>
 
-          <div className="heroPortrait">
-            <div className="portraitHalo"></div>
-            <img src="/images/xposure-hero-monochrome-2026.jpeg" alt="Black-and-white Xposure studio portrait" fetchPriority="high"/>
-            <div className="heroFrameLabel"><span>PORTRAIT / EDITORIAL</span><strong>01</strong><i></i><small>08</small></div>
-            <div className="imageCredit">SHOT BY XPOSURE</div>
-          </div>
+          <HeroCarousel/>
         </div>
       </section>
 
