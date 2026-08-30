@@ -34,7 +34,7 @@ export default function Home(){
 
           <div className="heroPortrait">
             <div className="portraitHalo"></div>
-            <img src="/images/xposure-editorial.webp" alt="Xposure studio editorial portrait" fetchPriority="high"/>
+            <img src="/images/xposure-hero-monochrome-2026.jpeg" alt="Black-and-white Xposure studio portrait" fetchPriority="high"/>
             <div className="heroFrameLabel"><span>PORTRAIT / EDITORIAL</span><strong>01</strong><i></i><small>08</small></div>
             <div className="imageCredit">SHOT BY XPOSURE</div>
           </div>
